@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.6em;
+  color: #666666;
+  line-height: 1.6;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+h1, h2, h3 {
+  color: #DF6233;
+}
+
+h2, h3 {
+  margin: 3em 0 1em;
+}
+
+a {
+  color: #006CAB;
+}
+
+img {
+  margin: 1.5em 0;
+}
+
+#header {
+  margin: 3em 0;
+}

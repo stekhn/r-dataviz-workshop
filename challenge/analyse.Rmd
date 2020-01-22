@@ -1,0 +1,107 @@
+---
+title: "Rechtsextreme Aufmärsche in Deutschland"
+author: "Autoren: Teilnehmer des ifp Coding Bootcamps"
+date: "Letze Aktualisierung: `r format(Sys.time(), '%d.%m.%Y')`"
+output:
+  html_document:
+    theme: "simplex"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = F,
+  warning = F,
+  message = F
+)
+```
+
+```{r}
+# Pakete installieren und laden
+## install.packages(c("rmarkdown", "svglite", "tidyverse", "lubridate", "cowplot", "rgdal", "maptools", "leaflet"))
+library(tidyverse)
+library(lubridate)
+library(cowplot)
+library(rgdal)
+library(maptools)
+library(leaflet)
+
+# Theme für ggplot setzen: https://ggplot2.tidyverse.org/reference/ggtheme.html
+theme_set(theme_minimal())
+
+## Tabelle der rechtsextremen Aufmärsche laden und richtige Spaltenformate setzen
+demos <- read_csv(
+  "data/rechtsextreme_aufmaersche.csv",
+  col_types = cols(
+    .default = col_character(),
+    Datum = col_date(format = "%d.%m.%Y"),
+    Teilnehmer = col_integer()
+  )
+)
+
+## Eigene Spalten für Jahr und Monat hinzufügen
+demos <- demos %>%
+  mutate(
+    Jahr = year(Datum),
+    Monat = month(Datum)
+  )
+```
+
+### Welche rechtsextreme Gruppe oder Partei hat die meisten Aufmärsche organisiert?
+
+```{r}
+# Dein Code
+```
+
+### Wie hat sich die Anzahl der rechtsextremen Aufmärsche entwickelt?
+
+```{r}
+# Dein Code
+```
+
+### Wie hat sich die Anzahl der Teilnehmer bei rechtsextremen Aufmärschen entwickelt?
+
+```{r}
+# Dein Code
+```
+
+### Gibt es einen Zusammenhang zwischen der Anzahl der Veranstaltungen und den Teilnehmerzahlen?
+
+```{r}
+# Dein Code
+```
+
+### Gibt es einen Zusammenhang zwischen der Anzahl der Aufmärsche und der Anzahl der Asylanträge?
+
+```{r}
+# Dein Code
+```
+
+### In welchem Monat gab es die meisten rechtsextremen Aufmärsche?
+
+```{r}
+# Dein Code
+```
+
+### Wie hat sich die Anzahl der rechtsextremen Aufmärsche *pro Partei* entwickelt?
+
+```{r}
+# Dein Code
+```
+
+### Wie hat sich die Anzahl der rechtsextremen Aufmärsche *pro Bundesland* entwickelt?
+
+```{r}
+# Dein Code
+```
+
+### Karte der rechtsextremen Aufmärsche pro Bundesland (Leaflet)
+
+```{r}
+# Dein Code
+```
+
+### Karte der rechtsextremen Aufmärsche pro Ort (Leaflet)
+
+```{r}
+# Dein Code
+```
